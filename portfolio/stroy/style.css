@@ -36,7 +36,8 @@ mark{background:none;color:var(--y);white-space:nowrap}
 .hdr-in{display:flex;align-items:center;gap:32px;height:72px}
 .logo{display:flex;align-items:center;gap:10px;font:900 24px/1 var(--d);letter-spacing:.02em;text-decoration:none}
 .logo i{width:26px;height:26px;background:var(--y);clip-path:polygon(50% 0,100% 45%,100% 100%,0 100%,0 45%);position:relative}
-.logo span{font:600 11px/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#8b9298;max-width:12em;margin-left:4px}
+.logo span{font:600 11px/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#8b9298;white-space:nowrap;margin-left:4px}
+fieldset.field{display:block;min-width:0}
 .menu{display:flex;gap:28px;margin-left:auto}
 .menu a{text-decoration:none;font-size:15px;color:#b9bfc4}.menu a:hover{color:#fff}
 .hdr-cta{padding:13px 20px;font-size:15px;box-shadow:none}
@@ -183,6 +184,7 @@ input[type=range]{width:100%;accent-color:var(--y);height:28px}
 .reveal.in{opacity:1;transform:none}
 
 @media(max-width:1060px){
+  .logo span{display:none}
   .steps{grid-template-columns:repeat(3,1fr)}
   .g-grid{grid-template-columns:1fr 1fr}
   .c1{left:-10px}.c2{right:-8px}
