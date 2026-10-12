@@ -154,6 +154,74 @@
     up.addEventListener("click", () => window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }));
   }
 
+  /* Карусели примеров сайтов + просмотр крупно */
+  const cars = document.querySelectorAll(".site");
+  let lb = null, lbItems = [], lbIdx = 0;
+  const lbShow = (i) => {
+    lbIdx = (i + lbItems.length) % lbItems.length;
+    const it = lbItems[lbIdx];
+    lb.querySelector("img").src = it.full;
+    lb.querySelector("img").alt = it.alt;
+    lb.querySelector(".lb-c").textContent = it.title + " · " + (lbIdx + 1) + " / " + lbItems.length;
+  };
+  const lbClose = () => { lb.hidden = true; document.body.style.overflow = ""; };
+  const lbOpen = (items, i) => {
+    if (!lb) {
+      lb = document.createElement("div");
+      lb.className = "lb"; lb.hidden = true;
+      lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true"); lb.setAttribute("aria-label", "Просмотр примера");
+      lb.innerHTML = '<img alt=""><button class="lb-x" type="button" aria-label="Закрыть">✕</button>' +
+        '<button class="lb-p" type="button" aria-label="Предыдущий">‹</button><button class="lb-n" type="button" aria-label="Следующий">›</button><p class="lb-c"></p>';
+      document.body.appendChild(lb);
+      lb.querySelector(".lb-x").addEventListener("click", lbClose);
+      lb.querySelector(".lb-p").addEventListener("click", () => lbShow(lbIdx - 1));
+      lb.querySelector(".lb-n").addEventListener("click", () => lbShow(lbIdx + 1));
+      lb.addEventListener("click", (e) => { if (e.target === lb) lbClose(); });
+      document.addEventListener("keydown", (e) => {
+        if (lb.hidden) return;
+        if (e.key === "Escape") lbClose();
+        if (e.key === "ArrowLeft") lbShow(lbIdx - 1);
+        if (e.key === "ArrowRight") lbShow(lbIdx + 1);
+      });
+    }
+    lbItems = items; lb.hidden = false; document.body.style.overflow = "hidden";
+    lbShow(i); lb.querySelector(".lb-x").focus();
+  };
+
+  cars.forEach((site) => {
+    const box = site.querySelector(".site-car");
+    const thumbs = [...site.querySelectorAll(".site-thumbs button")];
+    if (!box || !thumbs.length) return;
+    const img = box.querySelector("img");
+    const count = box.querySelector(".car-count");
+    const items = thumbs.map((b) => ({ full: b.dataset.full, alt: b.dataset.alt, title: b.title }));
+    let cur = 0;
+    const go = (i) => {
+      cur = (i + items.length) % items.length;
+      thumbs.forEach((b, k) => { b.classList.toggle("on", k === cur); b.setAttribute("aria-pressed", k === cur); });
+      if (count) count.textContent = (cur + 1) + " / " + items.length;
+      if (reduce) { img.src = items[cur].full; img.alt = items[cur].alt; return; }
+      img.classList.add("fade");
+      const pre = new Image();
+      pre.onload = pre.onerror = () => { img.src = items[cur].full; img.alt = items[cur].alt; img.classList.remove("fade"); };
+      pre.src = items[cur].full;
+    };
+    thumbs.forEach((b, k) => b.addEventListener("click", () => go(k)));
+    box.querySelector(".car-p")?.addEventListener("click", () => go(cur - 1));
+    box.querySelector(".car-n")?.addEventListener("click", () => go(cur + 1));
+    box.querySelector(".car-zoom")?.addEventListener("click", () => lbOpen(items, cur));
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", () => lbOpen(items, cur));
+    /* Свайп пальцем */
+    let x0 = null;
+    box.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener("touchend", (e) => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 40) go(dx < 0 ? cur + 1 : cur - 1);
+    }, { passive: true });
+  });
+
   const y = document.querySelector("#year");
   if (y) y.textContent = new Date().getFullYear();
 })();
