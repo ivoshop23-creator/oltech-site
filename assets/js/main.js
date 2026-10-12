@@ -19,6 +19,16 @@
     a.rel = "noopener";
   });
 
+  /* Мобильное меню */
+  const top = document.querySelector(".top");
+  const burger = document.querySelector(".burger");
+  if (top && burger) {
+    const setOpen = (on) => { top.classList.toggle("open", on); burger.setAttribute("aria-expanded", on); };
+    burger.addEventListener("click", () => setOpen(!top.classList.contains("open")));
+    top.querySelectorAll(".nav a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
+  }
+
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* Hero: обычная карточка превращается в продающую по мере прокрутки */
