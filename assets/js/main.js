@@ -136,6 +136,15 @@
     });
   }
 
+  /* Кнопка «наверх» */
+  const up = document.querySelector(".to-top");
+  if (up) {
+    const toggleUp = () => up.classList.toggle("on", window.scrollY > 700);
+    window.addEventListener("scroll", toggleUp, { passive: true });
+    toggleUp();
+    up.addEventListener("click", () => window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }));
+  }
+
   const y = document.querySelector("#year");
   if (y) y.textContent = new Date().getFullYear();
 })();
