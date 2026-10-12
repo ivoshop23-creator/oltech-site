@@ -56,9 +56,9 @@ p+p{margin-top:.8em}
 .brand b{font-family:var(--display);font-weight:900;font-size:19px;letter-spacing:.14em}
 .brand-t{display:flex;flex-direction:column;line-height:1}
 .brand-t small{margin-top:4px;font-size:11px;font-weight:600;letter-spacing:.02em;color:var(--ink-2);white-space:nowrap}
-.brand-t small i{font-style:normal}
-@media(max-width:480px){.brand-t small i{display:none}.brand{gap:8px}}
-@media(max-width:330px){.brand-t small{display:none}}
+.brand-t small br{display:none}
+@media(max-width:480px){.brand{gap:8px}.brand-t small{font-size:10px;line-height:1.2;margin-top:3px}.brand-t small br{display:inline}}
+@media(max-width:340px){.brand-t small{display:none}}
 .nav{display:flex;gap:24px;margin-left:auto}
 .nav a{text-decoration:none;font-size:15px;color:var(--ink-2)}
 .nav a:hover,.nav a[aria-current]{color:var(--ink)}
@@ -406,3 +406,5 @@ html{scroll-padding-top:84px}
 .lb-c{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#d8d2e4;font-size:14px}
 @media(max-width:600px){.lb{padding:60px 8px}.lb-p,.lb-n{top:auto;bottom:40px;margin:0}.lb-p{left:calc(50% - 60px)}.lb-n{right:calc(50% - 60px)}.lb-c{bottom:96px}}
 @media(max-width:600px){.car-p,.car-n{width:34px;height:34px;margin-top:-17px;font-size:20px;background:rgba(255,255,255,.85)}.car-p{left:6px}.car-n{right:6px}.car-zoom,.car-count{font-size:11px;padding:5px 9px}}
+@media(max-width:400px){.top .btn{padding:10px 13px;font-size:14px}}
+@media(max-width:370px){.brand{gap:6px}.brand img{width:30px;height:30px}.brand b{font-size:17px}.top .btn{padding:9px 11px}}
