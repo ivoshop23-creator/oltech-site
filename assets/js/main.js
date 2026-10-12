@@ -98,7 +98,7 @@
   if (calc) {
     const fmt = (n) => Math.round(n).toLocaleString("ru-RU") + " ₽";
     const $ = (s) => calc.querySelector(s);
-    const PRICE = { cover: 1000, slide: 400, seo: 500, model: 1500, anim: 2500, both: 1.6, rush: 1.3 };
+    const PRICE = { cover: 1000, slide: 375, seo: 500, model: 1500, anim: 2500, both: 1.6, rush: 1.3 };
     let last = "";
 
     const run = () => {
