@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Туман — домики над облаками · концепт OLTECH</title>
+<meta name="description" content="Концепт сайта загородных домиков. Учебная работа OLTECH: место вымышленное.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1f2a24">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="preload" href="fonts/lora.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+
+<div class="concept">Концепт сайта для портфолио <a href="/">OLTECH</a> · место вымышленное</div>
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="logo" href="#top"><svg viewBox="0 0 32 20" aria-hidden="true"><path d="M1 19 11 5l6 8 4-5 10 11Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 15h26" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3"/></svg>туман</a>
+    <nav class="menu" id="menu" aria-label="Разделы">
+      <a href="#houses">Домики</a>
+      <a href="#do">Чем заняться</a>
+      <a href="#quiz">Подбор отдыха</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <a class="btn btn-ember hdr-cta" href="#book">Забронировать</a>
+    <button class="burger" type="button" aria-controls="menu" aria-expanded="false" aria-label="Меню"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <img class="hero-bg" src="img/hero.webp" alt="Терраса домика над туманом в долине на рассвете" width="1376" height="768">
+    <div class="hero-shade"></div>
+    <div class="wrap hero-in">
+      <p class="eyebrow reveal">Домики в горах · 2 часа от города</p>
+      <h1 class="reveal">Выходные <em>над&nbsp;облаками</em></h1>
+      <p class="lead reveal">Шесть домиков на склоне, панорамные окна, чан под звёздами и рассвет над туманом. Без соседей за стенкой и без шума трассы.</p>
+      <form class="book reveal" id="book">
+        <label><span>Заезд</span><input type="date" name="in" required></label>
+        <label><span>Выезд</span><input type="date" name="out" required></label>
+        <label><span>Гостей</span>
+          <select name="guests"><option>2 взрослых</option><option>2 взрослых + ребёнок</option><option>4 гостя</option></select>
+        </label>
+        <button class="btn btn-ember" type="submit">Проверить даты</button>
+        <p class="book-note" id="bookNote" role="status">Бесплатная отмена за 7 дней до заезда</p>
+      </form>
+    </div>
+    <a class="scroll" href="#why" aria-label="Листать вниз"><span></span></a>
+  </section>
+
+  <section class="sec why" id="why">
+    <div class="wrap">
+      <div class="why-grid">
+        <article class="reveal"><img src="img/aframe.webp" alt="Домик A-frame со стеклянным фасадом в осеннем лесу" loading="lazy" width="928" height="1152"><h3>Уединение</h3><p>Между домиками 150 метров леса. Вас не видно и не слышно — только вы и горы.</p></article>
+        <article class="reveal"><img src="img/couple.webp" alt="Пара в пледе на террасе домика смотрит на луг" loading="lazy" width="1152" height="928"><h3>Природа рядом</h3><p>С террасы — луг, сосновый лес и хребет на горизонте. Тропа к смотровой начинается у крыльца.</p></article>
+        <article class="reveal"><img src="img/breakfast.webp" alt="Завтрак с сырниками и травяным чаем на террасе" loading="lazy" width="1152" height="928"><h3>Забота</h3><p>Завтрак из фермерских продуктов привозим к двери. Дрова, полотенца и халаты уже ждут.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec houses" id="houses">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="reveal">Домики</h2>
+        <p class="reveal">Цена за ночь в будни. В пятницу и субботу +20%. Завтрак, баня и парковка уже включены.</p>
+      </div>
+      <div class="house-list">
+        <article class="house reveal">
+          <div class="house-pic"><img src="img/window.webp" alt="Кровать у панорамного окна с видом на горы в тумане" loading="lazy" width="928" height="1152"></div>
+          <div class="house-txt">
+            <span class="tag">Для двоих</span>
+            <h3>Панорама</h3>
+            <p>Кровать прямо у окна во всю стену: просыпаетесь — и горы в тумане перед вами.</p>
+            <ul><li>25 м²</li><li>до 2 гостей</li><li>камин</li></ul>
+            <div class="house-buy"><b>9 900 ₽ <small>/ ночь</small></b><a class="btn btn-line" href="#book">Выбрать даты</a></div>
+          </div>
+        </article>
+        <article class="house reveal">
+          <div class="house-pic"><img src="img/aframe.webp" alt="Домик A-frame вечером в лесу" loading="lazy" width="928" height="1152"></div>
+          <div class="house-txt">
+            <span class="tag">Хит сезона</span>
+            <h3>A-фрейм</h3>
+            <p>Двухэтажный домик со стеклянным фасадом и спальней под крышей. Свой чан на террасе.</p>
+            <ul><li>45 м²</li><li>до 4 гостей</li><li>свой чан</li></ul>
+            <div class="house-buy"><b>13 500 ₽ <small>/ ночь</small></b><a class="btn btn-line" href="#book">Выбрать даты</a></div>
+          </div>
+        </article>
+        <article class="house reveal">
+          <div class="house-pic"><img src="img/chan.webp" alt="Чан с горячей водой у бани вечером" loading="lazy" width="928" height="1152"></div>
+          <div class="house-txt">
+            <span class="tag">Для компании</span>
+            <h3>Дом с баней</h3>
+            <p>Дом на две спальни, своя баня на дровах и чан с видом на хребет. Для семьи или друзей.</p>
+            <ul><li>70 м²</li><li>до 6 гостей</li><li>баня + чан</li></ul>
+            <div class="house-buy"><b>18 900 ₽ <small>/ ночь</small></b><a class="btn btn-line" href="#book">Выбрать даты</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec quiz-sec" id="quiz">
+    <div class="wrap quiz-wrap">
+      <div class="quiz-intro reveal">
+        <p class="eyebrow">Подбор за 30 секунд</p>
+        <h2>Какой отдых нужен именно вам?</h2>
+        <p>Ответьте на 3 вопроса — подберём домик и пришлём <b>промокод −15% на будни</b> вместе с гидом «12 мест в часе езды от нас».</p>
+      </div>
+      <form class="quiz reveal" id="quizForm">
+        <div class="q-progress"><span id="qBar"></span></div>
+        <fieldset class="q on" data-step="1">
+          <legend>С кем едете?</legend>
+          <label><input type="radio" name="who" value="pair"><span>Вдвоём</span></label>
+          <label><input type="radio" name="who" value="family"><span>С детьми</span></label>
+          <label><input type="radio" name="who" value="friends"><span>Компанией</span></label>
+        </fieldset>
+        <fieldset class="q" data-step="2">
+          <legend>Что важнее всего?</legend>
+          <label><input type="radio" name="want" value="view"><span>Вид из окна</span></label>
+          <label><input type="radio" name="want" value="spa"><span>Баня и чан</span></label>
+          <label><input type="radio" name="want" value="active"><span>Прогулки и активности</span></label>
+        </fieldset>
+        <fieldset class="q" data-step="3">
+          <legend>Когда хотите поехать?</legend>
+          <label><input type="radio" name="when" value="weekday"><span>В будни — тише и дешевле</span></label>
+          <label><input type="radio" name="when" value="weekend"><span>В выходные</span></label>
+          <label><input type="radio" name="when" value="any"><span>Пока не знаю</span></label>
+        </fieldset>
+        <div class="q q-result" data-step="4">
+          <p class="eyebrow">Вам подойдёт</p>
+          <h3 id="qHouse">Панорама</h3>
+          <p id="qWhy">Домик для двоих с кроватью у панорамного окна.</p>
+          <div class="promo"><span>Ваш промокод</span><b>БУДНИ15</b></div>
+          <a class="btn btn-ember wide" id="qSend" href="#book">Получить гид и промокод в Telegram</a>
+          <p class="book-note">Демо-версия: сообщения не отправляются</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="sec" id="do">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="reveal">Чем заняться</h2>
+        <p class="reveal">Можно ничего не делать. А можно так:</p>
+      </div>
+      <ul class="acts">
+        <li class="reveal"><b>01</b><h3>Рассвет над туманом</h3><p>Будим в 5:30, ведём на смотровую с термосом. 20 минут пешком.</p></li>
+        <li class="reveal"><b>02</b><h3>Баня и чан</h3><p>Топим заранее, приносим веники и травяной сбор. Чан — до 40 °C.</p></li>
+        <li class="reveal"><b>03</b><h3>Конная прогулка</h3><p>Двухчасовой маршрут по лесу и лугам с инструктором.</p></li>
+        <li class="reveal"><b>04</b><h3>Ужин у костра</h3><p>Шашлык, печёная картошка и глинтвейн. Всё готовим мы.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec steps-sec">
+    <div class="wrap">
+      <h2 class="reveal">Как забронировать</h2>
+      <ol class="steps">
+        <li class="reveal"><span>1</span><h3>Выберите даты</h3><p>Свободные даты видно сразу, без звонков.</p></li>
+        <li class="reveal"><span>2</span><h3>Внесите 30%</h3><p>Остальное — при заезде. Отмена за 7 дней бесплатно.</p></li>
+        <li class="reveal"><span>3</span><h3>Получите маршрут</h3><p>За день до заезда пришлём точку на карте и код от домика.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="faq">
+    <div class="wrap faq-wrap">
+      <h2 class="reveal">Вопросы</h2>
+      <div class="faq">
+        <details class="reveal"><summary>Можно с собакой?</summary><p>Да, в домике «Панорама» и «Дом с баней». Залог 3 000 ₽ возвращаем при выезде.</p></details>
+        <details class="reveal"><summary>Как добраться без машины?</summary><p>Встретим на станции электрички — трансфер 1 500 ₽ в одну сторону.</p></details>
+        <details class="reveal"><summary>Есть ли связь и интернет?</summary><p>Мобильная связь ловит, в каждом домике есть Wi-Fi. Но многие специально его не включают.</p></details>
+        <details class="reveal"><summary>Что взять с собой?</summary><p>Тёплую одежду и удобную обувь. Постельное, полотенца, халаты, посуда и дрова уже есть.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <img src="img/couple.webp" alt="" loading="lazy" width="1152" height="928">
+    <div class="final-shade"></div>
+    <div class="wrap final-in">
+      <h2 class="reveal">Ближайшие свободные выходные разбирают за 2–3 недели</h2>
+      <a class="btn btn-ember reveal" href="#book">Проверить даты</a>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr-in">
+    <span class="logo">туман</span>
+    <span>Концепт сайта. Место, цены и адреса вымышленные. Сделано в <a href="/">OLTECH</a></span>
+  </div>
+</footer>
+<script src="script.js?v=1" defer></script>
+</body>
+</html>
