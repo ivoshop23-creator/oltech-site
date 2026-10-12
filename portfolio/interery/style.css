@@ -181,3 +181,4 @@ fieldset legend{margin-bottom:12px}
   .reveal,.badge{opacity:1;transform:none;transition:none}
   .arch img{transition:none;transform:none!important}
 }
+.hero-pic .arch img{object-position:62% 50%}
