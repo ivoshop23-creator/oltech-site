@@ -23,6 +23,10 @@
   const iso = (d) => d.toISOString().slice(0, 10);
   const inp = book.querySelector("[name=in]"), out = book.querySelector("[name=out]");
   inp.min = iso(today); out.min = iso(new Date(today.getTime() + 864e5));
+  /* По умолчанию — ближайшие выходные: пятница → воскресенье */
+  const fri = new Date(today); fri.setDate(today.getDate() + ((5 - today.getDay() + 7) % 7 || 7));
+  if (!inp.value) inp.value = iso(fri);
+  if (!out.value) out.value = iso(new Date(fri.getTime() + 2 * 864e5));
   inp.addEventListener("change", () => { if (inp.value) out.min = iso(new Date(new Date(inp.value).getTime() + 864e5)); });
   book.addEventListener("submit", (e) => {
     e.preventDefault();
