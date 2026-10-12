@@ -112,7 +112,10 @@ p+p{margin-top:.8em}
   .hero{height:auto}
   .hero-stick{position:relative;top:0;height:auto;min-height:0;padding:56px 0 72px}
   .hero-grid{grid-template-columns:1fr;gap:48px}
-  .notes{display:none}
+  .notes{inset:auto 10px 12px;display:flex;flex-direction:column;gap:6px}
+  .note,.note.n1,.note.n2,.note.n3{position:relative;left:auto;right:auto;top:auto;max-width:none;padding:8px 12px;font-size:12.5px;line-height:1.3;border-radius:12px}
+  .note b{display:inline;font-size:12.5px}
+  .note b::after{content:" — "}
   .tile.me{transform:scale(calc(1 + var(--lift,0) * .35)) translate(calc(var(--lift,0) * -14%),calc(var(--lift,0) * 10%))}
   .hero-facts{gap:18px}.hero-facts b{font-size:21px;white-space:nowrap}
   .scroll-hint{display:none}
