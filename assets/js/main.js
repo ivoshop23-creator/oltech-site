@@ -13,10 +13,17 @@
     return text ? base + "?text=" + encodeURIComponent(text) : base;
   };
 
+  /* Цели Яндекс Метрики: tg_click — переход в Telegram, calc_send / calc_copy — калькулятор */
+  const goal = (name, params) => {
+    try { if (window.ym && window.OLTECH_METRIKA_ID) window.ym(window.OLTECH_METRIKA_ID, "reachGoal", name, params || {}); } catch (e) {}
+  };
+  const page = location.pathname.replace(/\/$/, "") || "/main";
+
   document.querySelectorAll("[data-contact]").forEach((a) => {
     a.href = contactUrl(a.dataset.contact || "");
     a.target = "_blank";
     a.rel = "noopener";
+    a.addEventListener("click", () => goal("tg_click", { page: page, button: a.textContent.trim() }));
   });
 
   /* Мобильное меню */
@@ -125,10 +132,12 @@
 
     calc.addEventListener("input", run);
     calc.addEventListener("submit", (e) => e.preventDefault());
+    $("#send").addEventListener("click", () => goal("calc_send", { sum: $("#sum").textContent }));
     run();
 
     const toast = document.querySelector(".toast");
     $("#copy").addEventListener("click", async () => {
+      goal("calc_copy");
       try { await navigator.clipboard.writeText(last); toast.textContent = "Расчёт скопирован"; }
       catch { toast.textContent = "Не получилось скопировать. Выделите текст вручную."; }
       toast.classList.add("on");
