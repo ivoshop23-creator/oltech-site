@@ -56,7 +56,9 @@ p+p{margin-top:.8em}
 .brand b{font-family:var(--display);font-weight:900;font-size:19px;letter-spacing:.14em}
 .brand-t{display:flex;flex-direction:column;line-height:1}
 .brand-t small{margin-top:4px;font-size:11px;font-weight:600;letter-spacing:.02em;color:var(--ink-2);white-space:nowrap}
-@media(max-width:380px){.brand-t small{display:none}}
+.brand-t small i{font-style:normal}
+@media(max-width:480px){.brand-t small i{display:none}.brand{gap:8px}}
+@media(max-width:330px){.brand-t small{display:none}}
 .nav{display:flex;gap:24px;margin-left:auto}
 .nav a{text-decoration:none;font-size:15px;color:var(--ink-2)}
 .nav a:hover,.nav a[aria-current]{color:var(--ink)}
