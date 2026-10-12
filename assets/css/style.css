@@ -327,3 +327,24 @@ fieldset.field{border:0;min-width:0}
 .lp-inside p{color:var(--ink-2);font-size:15px;line-height:1.5}
 @media(max-width:860px){.lp-inside{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.lp-inside{grid-template-columns:1fr}}
+
+/* Текстовые страницы */
+.prose{max-width:760px}
+.prose h2{font-size:clamp(22px,2.4vw,28px);margin:40px 0 12px}
+.prose h2:first-child{margin-top:0}
+.prose p,.prose li{color:var(--ink-2);font-size:16.5px;line-height:1.65}
+.prose p+p{margin-top:12px}
+.prose ul{margin:8px 0 0;padding-left:22px;display:grid;gap:8px}
+.prose a{color:var(--plum)}
+.linkish{border:0;background:none;padding:0;font:inherit;color:inherit;cursor:pointer}
+.linkish:hover{color:var(--ink)}
+
+/* Плашка cookie */
+.cookie{position:fixed;left:16px;bottom:16px;z-index:70;max-width:440px;padding:18px 20px;border-radius:var(--r-md);background:var(--white);box-shadow:0 24px 50px -16px rgba(28,22,39,.4),0 0 0 1px rgba(22,19,28,.06);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .3s,transform .3s}
+.cookie.on{opacity:1;transform:none;pointer-events:auto}
+.cookie p{font-size:14px;line-height:1.5;color:var(--ink-2)}
+.cookie a{color:var(--plum)}
+.cookie-btns{display:flex;gap:10px;margin-top:14px}
+.cookie .btn{padding:10px 18px;font-size:14px}
+@media(max-width:560px){.cookie{left:10px;right:10px;bottom:10px;max-width:none}}
+.prose ul+p{margin-top:12px}
