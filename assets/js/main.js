@@ -3,7 +3,7 @@
 
   /* Куда пишут клиенты. Укажите username Telegram без @ — и все кнопки сайта поведут в чат. */
   const CONTACT = {
-    telegram: "",
+    telegram: "olvr23",
     fallback: "https://kwork.ru/user/olvr23"
   };
 
