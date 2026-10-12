@@ -258,7 +258,8 @@ fieldset.field{border:0;min-width:0}
 .to-top:hover{background:var(--night)}
 .to-top svg{width:20px;height:20px}
 @media(max-width:860px){.to-top{right:14px;bottom:16px;width:44px;height:44px}}
-.foot-links{display:flex;flex-wrap:wrap;gap:8px 24px}
+.foot-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.foot-links .dot{color:var(--lilac)}
 
 /* Пакеты лендингов */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
