@@ -206,6 +206,9 @@ section.blk{padding:clamp(72px,10vw,128px) 0}
 .alt-contact a{color:inherit;text-underline-offset:3px}
 .alt-contact a:hover{color:var(--ink)}
 .final .alt-contact{color:#e3dcee}
+.plan .alt-contact{margin-top:12px;text-align:center;font-size:13px}
+.calc-out .alt-contact{color:rgba(255,255,255,.7);font-size:13px}
+.calc-out .alt-contact a:hover{color:var(--white)}
 .final .alt-contact a:hover{color:var(--white)}
 
 /* ---------- /kartochki ---------- */
