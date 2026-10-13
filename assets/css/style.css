@@ -197,6 +197,16 @@ section.blk{padding:clamp(72px,10vw,128px) 0}
 .foot{padding:48px 0 64px;font-size:14px;color:var(--ink-3)}
 .foot .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between}
 .foot a{text-decoration:none}.foot a:hover{color:var(--ink)}
+.foot-contacts{flex-basis:100%;color:var(--ink-2)}
+.foot-contacts a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+
+/* кнопка + запасные контакты (ВК, почта) */
+.cta-act{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.alt-contact{font-size:14px;color:var(--ink-3)}
+.alt-contact a{color:inherit;text-underline-offset:3px}
+.alt-contact a:hover{color:var(--ink)}
+.final .alt-contact{color:#e3dcee}
+.final .alt-contact a:hover{color:var(--white)}
 
 /* ---------- /kartochki ---------- */
 .page-hero{padding:clamp(56px,8vw,96px) 0 clamp(40px,6vw,64px)}
