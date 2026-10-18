@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>НОРМА — интернет-магазин косметики · концепт OLTECH</title>
+<meta name="description" content="Концепт интернет-магазина косметики с подбором ухода, фильтрами, корзиной и панелью владельца. Учебная работа OLTECH: бренд вымышленный.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#EDF0EE">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="preload" href="fonts/inter-display-300.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <div class="demo-bar">
+    <span><b>Концепт интернет-магазина для портфолио <a href="/">OLTECH</a>.</b> Бренд и товары вымышленные. Оплата ЮKassa и доставка СДЭК подключаются в рабочей версии.</span>
+    <div class="seg" role="group" aria-label="Режим просмотра">
+      <button id="mode-shop" aria-pressed="true">Глазами покупателя</button>
+      <button id="mode-admin" aria-pressed="false">Глазами владельца</button>
+    </div>
+  </div>
+
+  <header class="top">
+    <button class="logo" data-go="home">НОРМА<small>pH 5.5</small></button>
+    <nav class="main" aria-label="Разделы">
+      <button data-go="catalog" data-cat="">Каталог</button>
+      <button data-go="catalog" data-cat="serum">Сыворотки</button>
+      <button data-go="catalog" data-cat="cream">Кремы</button>
+      <button data-go="catalog" data-cat="clean">Очищение</button>
+      <button data-go="catalog" data-cat="spf">SPF</button>
+    </nav>
+    <button class="cart-btn" data-go="cart" aria-label="Корзина">Корзина <span class="n" id="cart-n">0</span></button>
+  </header>
+
+  <main id="view"></main>
+
+  <footer>
+    <div><b>НОРМА</b>Уход с открытой формулой: на каждой банке процент активного вещества и pH. Разработано для чувствительной кожи.</div>
+    <div><b>Покупателям</b>Доставка СДЭК и Почтой<br>Бесплатно от 3 000 ₽<br>Возврат 14 дней</div>
+    <div><b>Связь</b>hello@norma.example<br>+7 900 000-00-00</div>
+  </footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js?v=1" defer></script>
+</body>
+</html>

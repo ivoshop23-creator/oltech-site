@@ -391,6 +391,8 @@ html{scroll-padding-top:84px}
 .site b{margin:0 12px;font-family:var(--display);font-weight:700;font-size:21px;line-height:1.2}
 
 .site-txt{margin:8px 12px 0;color:var(--ink-2);font-size:15px;line-height:1.5}
+@media(min-width:761px){.site-wide{grid-column:1/-1}.site-wide .site-thumbs{max-width:560px}}
+.site-txt a{color:inherit;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:760px){.sites{grid-template-columns:1fr}}
 .sites-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;margin:64px 0 24px;font-size:clamp(26px,3vw,36px)}
 .sites-h a{font-family:inherit;font-size:16px;font-weight:600;letter-spacing:0;color:var(--plum)}
