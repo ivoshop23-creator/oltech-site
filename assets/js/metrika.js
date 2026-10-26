@@ -3,7 +3,7 @@
    Метрика загружается только после нажатия «Принять» (152-ФЗ). */
 (function () {
   "use strict";
-  var METRIKA_ID = 0;
+  var METRIKA_ID = 113797500;
   var KEY = "oltech_cookie_consent"; // "yes" | "no"
 
   var read = function () { try { return localStorage.getItem(KEY); } catch (e) { return null; } };
