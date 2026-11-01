@@ -1,6 +1,23 @@
 (() => {
   const f = document.getElementById("book");
   if (!f) return;
+  const q = new URLSearchParams(location.search), k = (q.get("k") || "").slice(0, 60), c = (q.get("c") || "").slice(0, 40);
+  if (k) {
+    const h = document.querySelector("h1"), crumbs = document.querySelector(".crumbs");
+    const p = document.createElement("p"); p.className = "crumbs"; p.textContent = "Пример страницы записи для «" + k + "»" + (c ? ", " + c : "");
+    crumbs.replaceWith(p); h.textContent = k + ": " + h.textContent.charAt(0).toLowerCase() + h.textContent.slice(1);
+    document.title = k + " — онлайн-запись";
+    const r = q.get("r"), n = q.get("n"), vet = f.dataset.niche === "ветклиника";
+    const who = vet ? "хозяин питомца" : "водитель";
+    const pts = [
+      (r && n ? "У вас " + r + "★ и " + n + " отзывов в 2ГИС: люди вам доверяют. " : "") + "Но сайта нет, и записаться онлайн нельзя.",
+      "Вечером и в выходные " + who + " не дозванивается и уходит к тем, у кого есть кнопка «Записаться».",
+      vet ? "Администратор весь день отвечает на «сколько стоит приём?» вместо работы с клиентами." : "В сезон телефон разрывается, а мастер не может ответить, пока работает."
+    ];
+    const box = document.createElement("div"); box.className = "pain";
+    box.innerHTML = "<b>Что сейчас теряет «" + k.replace(/[<>&"]/g, "") + "»</b><ul>" + pts.map((x) => "<li>" + x.replace(/[<>&]/g, "") + "</li>").join("") + "</ul><b>Решение ниже: так будет выглядеть ваша запись 24/7 ↓</b>";
+    document.querySelector(".page-hero .lead").after(box);
+  }
   const days = document.getElementById("b-days"), times = document.getElementById("b-times");
   const wd = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
   const now = new Date();
