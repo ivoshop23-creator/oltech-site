@@ -444,3 +444,4 @@ html{scroll-padding-top:84px}
 @keyframes float{50%{transform:translateY(-10px)}}
 @media(max-width:900px){.hero2{grid-template-columns:1fr;gap:28px}.flow-phone{width:250px}.flow-chat{min-height:330px}.b1{left:0;top:0}.b2{right:0;bottom:0}.flow{padding:36px 0}}
 @media(prefers-reduced-motion:reduce){.msg{animation:none;opacity:1;transform:none}.flow-badge{animation:none}}
+.seg-wrap{flex-wrap:wrap}.seg label small{opacity:.7;font-weight:400;margin-left:4px}.seg input:disabled+label{cursor:not-allowed;text-decoration:line-through}
