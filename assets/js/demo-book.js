@@ -1,7 +1,12 @@
-(() => {
+(async () => {
   const f = document.getElementById("book");
   if (!f) return;
-  const q = new URLSearchParams(location.search), k = (q.get("k") || "").slice(0, 60), c = (q.get("c") || "").slice(0, 40);
+  const q = new URLSearchParams(location.search);
+  const id = location.search.slice(1);
+  if (/^\d+$/.test(id)) {
+    try { const L = await (await fetch("/assets/js/leads.json?v=1")).json(); const x = L[id]; if (x) for (const key in x) q.set(key, x[key]); } catch (e) {}
+  }
+  const k = (q.get("k") || "").slice(0, 60), c = (q.get("c") || "").slice(0, 40);
   if (k) {
     const h = document.querySelector("h1"), crumbs = document.querySelector(".crumbs");
     const p = document.createElement("p"); p.className = "crumbs"; p.textContent = "Пример страницы записи для «" + k + "»" + (c ? ", " + c : "");
